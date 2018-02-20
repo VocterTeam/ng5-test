@@ -8,8 +8,13 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Ng5-test';
 
-  authenticate() {
-  	
+  public captchaResponse: string = '';
+  public resolved(captchaResponse: string) {
+
+    const newResponse = captchaResponse
+      ? `${captchaResponse.substr(0, 7)}...${captchaResponse.substr(-7)}`
+      : captchaResponse;
+    this.captchaResponse += `${JSON.stringify(newResponse)}\n`;
   }
 }
  

@@ -9,7 +9,16 @@
     <div class="form-element">
     	<input type="password" name="userpassword" placeholder="Password" class="form-field" required />
     </div>
-  	<button class="g-recaptcha form-submit" data-sitekey="6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej" data-callback='onSubmit'>Submit</button>
+    <re-captcha
+    #captchaRef="reCaptcha"
+    (resolved)="resolved($event)"
+    siteKey="6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej"
+    size="invisible"
+  ></re-captcha>
+  <button type="button" class="form-submit" (click)="captchaRef.execute()">Submit</button>
+  <pre>reCAPTCHA response log:
+  {{ captchaResponse || '(empty)' }}</pre>
+  	<!-- <button class="g-recaptcha form-submit" data-sitekey="6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej" data-callback='onSubmit'>Submit</button> -->
   </form>
 </div>
 
