@@ -10,10 +10,9 @@ export class AppComponent {
   public captchaResponse: string = '';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
 
-  public resolved(captchaResponse: string) {
+  public captchaResolved(captchaResponse: string) {
     
-    this.captchaResponse += `${JSON.stringify(captchaResponse)}`;
-
+    this.captchaResponse = `${JSON.stringify(captchaResponse)}`;
     console.log(captchaResponse);
   }
 }
