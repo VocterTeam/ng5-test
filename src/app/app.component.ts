@@ -25,7 +25,7 @@ export class AppComponent {
     this.captchaResponse = `${JSON.stringify(captchaResponse)}`;
     console.log(captchaResponse);
 
-    return this.http.post(`${this.apiURL}/system.user.login/`, {
+    return this.http.post(`${this.apiURL}/system.user.login`, {
     	username: 'developertest@amalyze.com',
     	password_md5: 'Iilo1ail',
     	captcha: this.captchaResponse
