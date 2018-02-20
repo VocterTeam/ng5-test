@@ -18,17 +18,10 @@ export class AppComponent {
   public loginName: string = 'developertest@amalyze.com';
   public loginPassword: string = 'Iilo1ail';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
- //  public httpOptions = {
- //  	headers: new HttpHeaders({
- //  	  'Content-Type':  'application/json',
- //  	  'Authorization': 'my-auth-token'
- //  	})
-	// };
 
   constructor(private http: HttpClient) { }
 
     public loginSubmit(captchaResponse: string) {
-      
       this.captchaResponse = captchaResponse;
 
       return this.http.post(`${this.apiUrls.root}${this.apiUrls.login}`, {
