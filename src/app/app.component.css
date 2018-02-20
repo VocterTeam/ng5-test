@@ -16,10 +16,11 @@
 }
 
 .form-submit {
+    min-width: 120px;
     padding: 10px;
+    cursor: pointer;
     color: #3c763d;
     border: none;
-    min-width: 120px;
     border-color: #d0e9c6;
     background-color: #dff0d8;
 }
