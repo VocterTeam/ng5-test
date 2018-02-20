@@ -27,7 +27,7 @@ export class AppComponent {
 
     return this.http.post(`${this.apiURL}/system.user.login/`, {
     	username: 'developertest@amalyze.com',
-    	password: 'Iilo1ail',
+    	password_md5: 'Iilo1ail',
     	captcha: this.captchaResponse
     }).subscribe(res => console.log(res));
   }
