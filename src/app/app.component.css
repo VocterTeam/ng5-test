@@ -1,3 +1,7 @@
+[disabled] {
+    opacity: 0.6;
+}
+
 .login-form {
     max-width: 300px;
     margin: 0 auto;
@@ -23,4 +27,9 @@
     border: none;
     border-color: #d0e9c6;
     background-color: #dff0d8;
+    transition: all 0.15s ease-in;
+}
+
+.form-submit[disabled] {
+    cursor: not-allowed;
 }
