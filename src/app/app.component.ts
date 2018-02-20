@@ -7,7 +7,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title: string = 'Ng5-test';
+  public appTitle: string = 'Ng5-test';
   public captchaResponse: string = '';
   public apiUrls = {
     root: 'https://api.amalyze.com/0.0.12',
