@@ -24,7 +24,7 @@ export class AppComponent {
 
   constructor(private http: HttpClient) { }
 
-    public captchaResolved(captchaResponse: string) {
+    public loginSubmit(captchaResponse: string) {
       
       this.captchaResponse = captchaResponse;
 

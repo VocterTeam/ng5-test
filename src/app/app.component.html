@@ -11,7 +11,7 @@
     </div>
     <re-captcha
   		#captchaRef="reCaptcha"
-  		(resolved)="captchaResolved($event)"
+  		(resolved)="loginSubmit($event)"
   		[siteKey]="reCaptchaKey"
   		size="invisible"></re-captcha>
   	<button type="button" class="form-submit" (click)="captchaRef.execute()">Submit</button>
