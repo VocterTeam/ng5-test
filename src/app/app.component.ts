@@ -7,8 +7,12 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  public title = 'Ng5-test';
+  public title: string = 'Ng5-test';
   public captchaResponse: string = '';
+  public apiUrls = {
+    root: 'https://api.amalyze.com/0.0.12',
+    login: '/system.user.login'
+  };
   public apiURL: string = 'https://api.amalyze.com/0.0.12';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
  //  public httpOptions = {
@@ -24,7 +28,7 @@ export class AppComponent {
       
       this.captchaResponse = captchaResponse;
 
-      return this.http.post(`${this.apiURL}/system.user.login`, {
+      return this.http.post(`${this.apiUrls.root}${this.apiUrls.login}`, {
       	username: 'developertest@amalyze.com',
       	password_md5: '909027439581d5d4923cb83fedd711e8',
       	captcha: this.captchaResponse
