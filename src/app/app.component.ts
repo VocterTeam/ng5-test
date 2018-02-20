@@ -22,7 +22,7 @@ export class AppComponent {
 
   public captchaResolved(captchaResponse: string) {
     
-    this.captchaResponse = `${JSON.stringify(captchaResponse)}`;
+    this.captchaResponse = captchaResponse;
     console.log(captchaResponse);
 
     return this.http.post(`${this.apiURL}/system.user.login`, {
