@@ -9,13 +9,14 @@ import {Md5} from 'ts-md5/dist/md5';
 })
 export class AppComponent {
   public appTitle: string = 'Ng5-test';
+  public isUserLoggedIn: Boolean = false;
   public captchaResponse: string = '';
   public apiUrls = {
     root: 'https://api.amalyze.com/0.0.12',
     login: '/system.user.login'
   };
-  public loginName = '';
-  public loginPassword: string = '';
+  public loginName: string = 'developertest@amalyze.com';
+  public loginPassword: string = 'Iilo1ail';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
  //  public httpOptions = {
  //  	headers: new HttpHeaders({
@@ -30,12 +31,13 @@ export class AppComponent {
       
       this.captchaResponse = captchaResponse;
 
-      console.log(Md5.hashStr('Test'));
-
       return this.http.post(`${this.apiUrls.root}${this.apiUrls.login}`, {
-      	username: 'developertest@amalyze.com',
-      	password_md5: '909027439581d5d4923cb83fedd711e8',
+      	username: this.loginName,
+      	password_md5: Md5.hashStr(this.loginPassword),
       	captcha: this.captchaResponse
-      }).subscribe(res => console.log(res));
+      }).subscribe(res => {
+        this.isUserLoggedIn = true;
+        console.log(res);
+      });
     }
 }
