@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import {Md5} from 'ts-md5/dist/md5';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,8 @@ export class AppComponent {
     public loginSubmit(captchaResponse: string) {
       
       this.captchaResponse = captchaResponse;
+
+      console.log(Md5.hashStr('Test'));
 
       return this.http.post(`${this.apiUrls.root}${this.apiUrls.login}`, {
       	username: 'developertest@amalyze.com',
