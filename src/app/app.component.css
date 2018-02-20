@@ -1,0 +1,14 @@
+.login-form {
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.form-element {
+    margin-bottom: 10px;
+}
+
+.form-field {
+	width: 100%;
+	padding: 10px 12px;
+	display: block;
+}
