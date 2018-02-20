@@ -6,15 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Ng5-test';
-
+  public title = 'Ng5-test';
   public captchaResponse: string = '';
-  public resolved(captchaResponse: string) {
+  public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
 
-    const newResponse = captchaResponse
-      ? `${captchaResponse.substr(0, 7)}...${captchaResponse.substr(-7)}`
-      : captchaResponse;
-    this.captchaResponse += `${JSON.stringify(newResponse)}\n`;
+  public resolved(captchaResponse: string) {
+    
+    this.captchaResponse += `${JSON.stringify(captchaResponse)}`;
+
+    console.log(captchaResponse);
   }
 }
  
