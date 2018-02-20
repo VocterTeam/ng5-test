@@ -4,10 +4,12 @@
 
   <form action="" class="login-form">
     <div class="form-element">
-    	<input type="text" name="username" placeholder="Name" class="form-field" required />
+    	<input type="text" name="username" placeholder="Name" class="form-field" [(ngModel)]="loginName" required />
     </div>
     <div class="form-element">
-    	<input type="password" name="userpassword" placeholder="Password" class="form-field" required />
+    	<input type="password" name="userpassword" placeholder="Password" class="form-field" [(ngModel)]="loginPassword" required />
+
+      {{loginPassword}}
     </div>
     <re-captcha
   		#captchaRef="reCaptcha"

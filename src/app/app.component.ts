@@ -13,7 +13,8 @@ export class AppComponent {
     root: 'https://api.amalyze.com/0.0.12',
     login: '/system.user.login'
   };
-  public apiURL: string = 'https://api.amalyze.com/0.0.12';
+  public loginName = '';
+  public loginPassword: string = '';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
  //  public httpOptions = {
  //  	headers: new HttpHeaders({
