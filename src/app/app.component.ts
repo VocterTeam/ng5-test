@@ -26,6 +26,9 @@ export class AppComponent {
     console.log(captchaResponse);
 
     return this.http.post(`${this.apiURL}/system.user.login`, {
+        headers: new HttpHeaders().set('Content-Type', 'application/json'),
+        responseType: 'text' 
+     }, {
     	username: 'developertest@amalyze.com',
     	password_md5: 'Iilo1ail',
     	captcha: this.captchaResponse
