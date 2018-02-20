@@ -11,6 +11,7 @@ export class AppComponent {
   public appTitle: string = 'Ng5-test';
   public isUserLoggedIn: Boolean = false;
   public captchaResponse: string = '';
+  public userInfo = {};
   public apiUrls = {
     root: 'https://api.amalyze.com/0.0.12',
     login: '/system.user.login'
@@ -30,6 +31,7 @@ export class AppComponent {
       	captcha: this.captchaResponse
       }).subscribe(res => {
         this.isUserLoggedIn = true;
+        this.userInfo = res['user'];
         console.log(res);
       });
     }
