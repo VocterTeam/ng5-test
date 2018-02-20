@@ -9,7 +9,7 @@ import { HttpClient, HttpHeaders  } from '@angular/common/http';
 export class AppComponent {
   public title = 'Ng5-test';
   public captchaResponse: string = '';
-  public apiURL: string = 'https://app.swaggerhub.com/apis/AMALYZEAG/Falcon/0.0.12';
+  public apiURL: string = 'https://api.amalyze.com/0.0.12';
   public reCaptchaKey: string = '6LcKNEIUAAAAAPGe3VDGzUcqXyi5iyMD-IPhiXej';
   public httpOptions = {
   	headers: new HttpHeaders({
@@ -27,9 +27,8 @@ export class AppComponent {
 
     return this.http.post(`${this.apiURL}/system.user.login`, {
     	username: 'developertest@amalyze.com',
-    	password_md5: 'Iilo1ail',
+    	password_md5: '909027439581d5d4923cb83fedd711e8',
     	captcha: this.captchaResponse
     }).subscribe(res => console.log(res));
   }
 }
- 
